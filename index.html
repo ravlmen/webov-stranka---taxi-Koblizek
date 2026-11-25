@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111214" />
+    <meta name="description" content="Taxi Koblížek. Osobní přístup a jízda s úsměvem v Třebechovicích pod Orebem, Týništi nad Orlicí, Pohoří, Opočně a Dobrušce." />
+    <title>Taxi Koblížek — Jízda s úsměvem</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/src/taxi.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <div class="preview-notice">NÁVRH NOVÉHO WEBU <span>•</span> Taxi Koblížek <a href="/o-nas/">Poznejte nás ↗</a></div>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Taxi Koblížek – úvod">
+        <img class="brand-logo" src="/logo-taxi-koblizek.png" alt="" width="759" height="592" />
+        <span class="brand-name">Taxi Koblížek<small>JÍZDA S ÚSMĚVEM</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+      <nav id="navigation" aria-label="Hlavní navigace">
+        <a href="/">Úvod</a>
+        <div class="nav-dropdown">
+          <button type="button" class="dropdown-toggle" aria-expanded="false" aria-controls="services-menu">Služby <span aria-hidden="true">⌄</span></button>
+          <div class="dropdown-panel" id="services-menu" hidden>
+            <span class="dropdown-caption">KAM VÁS SVEZEME?</span>
+            <a href="/sluzby/jizdy/">Jízdy po městě a okolí<small>Každodenní cesty bez starostí</small></a>
+            <a href="/sluzby/odvoz-z-akci/">Odvoz z akcí<small>Zpátky domů po vašem</small></a>
+            <a href="/sluzby/objednavka-online/">Objednávka přes aplikaci<small>Taxi jednoduše z telefonu</small></a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button type="button" class="dropdown-toggle" aria-expanded="false" aria-controls="prices-menu">Ceník <span aria-hidden="true">⌄</span></button>
+          <div class="dropdown-panel" id="prices-menu" hidden>
+            <span class="dropdown-caption">VYBERTE SVOU OBLAST</span>
+            <a href="/cenik/trebechovice/">Třebechovice pod Orebem</a>
+            <a href="/cenik/tyniste/">Týniště nad Orlicí</a>
+            <a href="/cenik/opocno-dobruska/">Pohoří · Opočno · Dobruška</a>
+          </div>
+        </div>
+        <a href="/o-nas/">O nás</a><a href="/kontakt/">Kontakt</a>
+      </nav>
+      <a class="header-call" href="tel:+420777182346"><span aria-hidden="true">↗</span> 777 182 346</a>
+    </header>
+
+    <main>
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> VAŠE MÍSTNÍ TAXI. S OSOBNÍM PŘÍSTUPEM.</div>
+          <h1>VAŠE MĚSTO.<br />VAŠE TAXI.<br /><em>VÁŠ KOBLÍŽEK.</em></h1>
+          <p>Po městě, za přáteli nebo domů. Taxi Koblížek vás sveze s osobním přístupem a úsměvem. Zavolejte, nebo si jízdu objednejte online.</p>
+          <div class="hero-actions"><a class="button button-dark" href="tel:+420777182346"><span aria-hidden="true">↗</span> Zavolat taxi</a><a class="button button-outline" href="https://app.taxikoblizek.cz">Objednat online <span aria-hidden="true">↗</span></a></div>
+          <div class="hero-note"><span class="mini-route" aria-hidden="true">○ ─── ○</span><span>Z vašeho města. Do vašeho cíle.</span></div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-top"><span>TAXI KOBLÍŽEK / VÝCHODNÍ ČECHY</span><span>↗</span></div>
+          <div class="visual-title">JÍZDA<br /><span>S ÚSMĚVEM.</span></div>
+          <img class="hero-art" src="/taxi-scene.svg" alt="Návrhová ilustrace moderního žlutého taxi; nejde o fotografii skutečného vozidla" width="900" height="650" fetchpriority="high" />
+          <div class="visual-location"><span aria-hidden="true">⌖</span> DOMA V NAŠEM REGIONU</div>
+          <a class="video-teaser" href="#pribeh"><span class="play-icon" aria-hidden="true">▶</span><span>Za volantem je příběh<small>Poznejte Taxi Koblížek</small></span><span class="teaser-arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <div class="region-strip" aria-label="Oblasti působení"><span>TŘEBECHOVICE POD OREBEM</span><i>✳</i><span>TÝNIŠTĚ NAD ORLICÍ</span><i>✳</i><span>OPOČNO</span><i>✳</i><span>DOBRUŠKA</span><i>✳</i><span>POHOŘÍ</span></div>
+
+      <section class="services section-shell section-space" id="sluzby">
+        <div class="section-heading"><div><p class="eyebrow">MALÉ CESTY. VELKÉ PLÁNY.</p><h2>Kam potřebujete?<br /><em>Jsme tu pro vás.</em></h2></div><p>Ať jedete za povinnostmi, nebo za zážitky.<br />Domluvte si cestu tak, jak vám vyhovuje.</p></div>
+        <div class="service-grid">
+          <article class="service-card"><span class="service-number">01 / KAŽDÝ DEN</span><div class="service-symbol" aria-hidden="true">↗</div><h3>Po městě i za město</h3><p>Do práce, na nákup nebo na návštěvu. Vaše běžné cesty si zaslouží příjemný začátek i konec.</p><a href="#region">Podívat se, kde jezdíme <span aria-hidden="true">↗</span></a></article>
+          <article class="service-card"><span class="service-number">02 / BEZ STAROSTÍ</span><div class="service-symbol" aria-hidden="true">☾</div><h3>Večer podle vás</h3><p>Užijte si večeři, setkání s přáteli nebo oslavu. Na možnost odvozu se nás zeptejte předem.</p><a href="#kontakt">Domluvit odvoz <span aria-hidden="true">↗</span></a></article>
+          <article class="service-card"><span class="service-number">03 / JEDNODUŠE ONLINE</span><div class="service-symbol" aria-hidden="true">⌘</div><h3>Taxi na pár kliknutí</h3><p>Zadejte trasu v naší aplikaci a objednejte si taxi online. Bez instalace, přímo z telefonu.</p><a href="https://app.taxikoblizek.cz">Otevřít aplikaci <span aria-hidden="true">↗</span></a></article>
+        </div>
+      </section>
+
+      <section class="story section-shell" id="pribeh">
+        <div class="story-media">
+          <div class="video-placeholder" id="video-placeholder"><div class="video-monogram" aria-hidden="true">K.</div><span class="video-tag">PROSTOR PRO VAŠE PŘEDSTAVOVACÍ VIDEO</span><h3>Než spolu vyrazíme,<br />pojďme se poznat.</h3><p>Sem patří váš příběh, vaše auto a vaše slova.</p><label class="button button-cream video-upload" for="video-file"><span aria-hidden="true">▶</span> Vyzkoušet vlastní video</label></div>
+          <video id="intro-video" controls playsinline preload="metadata" hidden aria-label="Náhled představovacího videa Taxi Koblížek"></video>
+          <input id="video-file" type="file" accept="video/mp4,video/webm,video/quicktime" hidden />
+          <button type="button" class="change-video" id="change-video" hidden>Změnit video</button>
+        </div>
+        <div class="story-copy"><p class="eyebrow">ZA NÁZVEM JE ČLOVĚK</p><h2>Taxi s tváří.<br /><em>A se srdcem.</em></h2><p>Taxi Koblížek není anonymní jméno na displeji. Jsme místní taxislužba, která má k našemu kraji i lidem v něm blízko.</p><p>Chceme, aby cesta nebyla jen přesun z bodu A do bodu B. Ale chvíle, kdy můžete na chvíli vypnout a nechat řízení na nás.</p><a class="text-link" href="#kontakt">Pojďme se domluvit <span aria-hidden="true">↗</span></a><p class="upload-note" id="video-status" role="status">Ukázková funkce návrhu: vybrané video se přehraje pouze ve vašem prohlížeči. Nikam se nenahrává ani neukládá.</p></div>
+      </section>
+
+      <section class="region section-shell section-space" id="region">
+        <div class="region-copy"><p class="eyebrow">TADY JSME DOMA</p><h2>Velký kus kraje.<br /><em>Blízko k vám.</em></h2><p>Naše domovská oblast je kolem Třebechovic, Týniště, Opočna a Dobrušky. Potřebujete vyrazit dál? Zavolejte a domluvíme trasu.</p><a class="text-link" href="#kontakt">Zeptat se na svoji cestu <span aria-hidden="true">↗</span></a></div>
+        <div class="region-places"><div><span>01</span><h3>Třebechovice pod Orebem</h3><a href="tel:+420777182346">777 182 346 ↗</a></div><div><span>02</span><h3>Týniště nad Orlicí</h3><a href="tel:+420777182346">777 182 346 ↗</a></div><div><span>03</span><h3>Pohoří · Opočno · Dobruška</h3><a href="tel:+420601182346">601 182 346 ↗</a></div></div>
+      </section>
+
+      <section class="pricing section-shell" id="cenik"><div><p class="eyebrow">NA ROVINU. I PŘED CESTOU.</p><h2>Vaše trasa.<br /><em>Přehledná cena.</em></h2><p>Cenu konkrétní jízdy zjistíte v objednávkové aplikaci nebo při telefonické domluvě. Podrobné regionální ceníky doplníme do další verze webu.</p></div><a class="button button-dark" href="https://app.taxikoblizek.cz">Zjistit cenu v aplikaci <span aria-hidden="true">↗</span></a></section>
+
+      <section class="contact" id="kontakt"><div class="section-shell"><div class="contact-top"><div><p class="eyebrow">DALŠÍ ZASTÁVKA? VAŠE PLÁNY.</p><h2>Tak kam<br />to <em>bude?</em></h2></div><a class="contact-online" href="https://app.taxikoblizek.cz"><span aria-hidden="true">↗</span> Objednat online</a></div><div class="contact-phones"><a href="tel:+420777182346"><small>TŘEBECHOVICE · TÝNIŠTĚ</small><span>777 182 346 ↗</span></a><a href="tel:+420601182346"><small>POHOŘÍ · OPOČNO · DOBRUŠKA</small><span>601 182 346 ↗</span></a></div></div></section>
+    </main>
+    <footer class="section-shell"><a class="footer-brand" href="/">Taxi Koblížek<span>Jízda s úsměvem.</span></a><p>Váš region. Vaše taxi.</p><span>© <span id="year">2026</span> Taxi Koblížek · Vizuální návrh</span></footer>
+    <div class="mobile-actions"><a href="tel:+420777182346">↗ Zavolat taxi</a><a href="https://app.taxikoblizek.cz">Objednat online ↗</a></div>
+  </body>
+</html>

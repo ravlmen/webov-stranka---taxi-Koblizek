@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2=".3" y2="1"><stop stop-color="#fff18b"/><stop offset=".25" stop-color="#ffda18"/><stop offset=".65" stop-color="#eeb900"/><stop offset="1" stop-color="#bc8000"/></linearGradient>
+    <linearGradient id="bonnet" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#ffe665"/><stop offset="1" stop-color="#e9b400"/></linearGradient>
+    <linearGradient id="glass" x2=".4" y2="1"><stop stop-color="#516375"/><stop offset=".5" stop-color="#1f2c3b"/><stop offset="1" stop-color="#0e1620"/></linearGradient>
+    <linearGradient id="rim"><stop stop-color="#bfc6ce"/><stop offset=".45" stop-color="#646b76"/><stop offset="1" stop-color="#e0e4eb"/></linearGradient>
+    <pattern id="checker" width="28" height="14" patternUnits="userSpaceOnUse"><path d="M0 0h14v7H0zm14 7h14v7H14z" fill="#151619"/></pattern>
+    <filter id="blur"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+  <path d="M0 547l900-80M68 593l789-70" stroke="#fff" stroke-width="2" opacity=".1"/>
+  <ellipse cx="474" cy="514" rx="340" ry="31" fill="#000" opacity=".5" filter="url(#blur)"/>
+  <g transform="rotate(-5 450 410)">
+    <path d="M101 417l40-76q12-22 46-29l72-78q22-23 64-25l190-1q34 0 66 27l79 73 107 34q33 12 41 35l12 69-22 35-617 7-65-31z" fill="#111318" stroke="#111318" stroke-width="8"/>
+    <path d="M95 401l48-72q13-19 42-25l78-80q17-17 55-20l194-1q38 0 64 25l83 72 105 33q32 10 42 39l11 59-25 34-616 6-70-34z" fill="url(#body)" stroke="#d8a800" stroke-width="2"/>
+    <path d="M255 300l33-66q9-10 28-11l69-1-8 83z" fill="url(#glass)" stroke="#24282d" stroke-width="5"/>
+    <path d="M402 222l104 1q26 0 47 20l64 57-220 5z" fill="url(#glass)" stroke="#24282d" stroke-width="6"/>
+    <path d="M440 228l-7 69M474 228l-6 69" stroke="#fff" opacity=".13" stroke-width="8"/>
+    <path d="M294 236l-22 55M313 232l-21 62" stroke="#fff" opacity=".17" stroke-width="5"/>
+    <path d="M614 305l147 32 33 33-206-17z" fill="url(#bonnet)"/>
+    <path d="M99 397l82-37 420-21 199 42" stroke="#fff3a7" stroke-width="3" fill="none" opacity=".65"/>
+    <path d="M189 368l414-19-2 23-418 20z" fill="url(#checker)"/>
+    <path d="M194 405l-6 45M385 315l-9 145M608 312l-9 137" stroke="#956b00" stroke-width="2" opacity=".7"/>
+    <rect x="413" y="321" width="34" height="6" rx="3" fill="#2b2c2e"/>
+    <rect x="289" y="325" width="27" height="5" rx="2" fill="#2b2c2e"/>
+    <path d="M602 303l-5-20 27-1q13 2 17 14l-2 16-32-3z" fill="#191c22"/>
+    <path d="M113 369l41-14-12 25-42 14z" fill="#e03c29"/>
+    <path d="M719 365l69 8 10 27-78-7-15-9z" fill="#e9f4ff" stroke="#515b67" stroke-width="2"/>
+    <path d="M726 373l55 8" stroke="#fff" stroke-width="5"/>
+    <path d="M722 411l88 2-4 30-92 2z" fill="#20242c"/>
+    <path d="M731 420l64 2M730 429l63 2" stroke="#69717d" stroke-width="2"/>
+    <path d="M96 428l65 10M302 465l311-7M725 459l73-5" stroke="#25282e" stroke-width="9"/>
+    <path d="M160 465a69 69 0 0 1 136-2M596 461a74 74 0 0 1 147-6" fill="#13151a"/>
+    <g transform="translate(229 463)">
+      <ellipse rx="53" ry="58" fill="#101216" stroke="#30333c" stroke-width="5"/>
+      <ellipse rx="35" ry="40" fill="url(#rim)" stroke="#171a21" stroke-width="5"/>
+      <path d="M0-33L8-10 29-19 13 3 28 23 5 15-3 34-9 11-29 17-14-4-25-24-5-13z" fill="#242a34"/>
+      <circle r="10" fill="#a2aab5"/><circle r="4" fill="#20242c"/>
+    </g>
+    <g transform="translate(671 460)">
+      <ellipse rx="58" ry="63" fill="#101216" stroke="#30333c" stroke-width="5"/>
+      <ellipse rx="39" ry="44" fill="url(#rim)" stroke="#171a21" stroke-width="5"/>
+      <path d="M0-37L9-12 32-21 14 3 31 26 6 17-3 38-10 12-32 19-16-5-28-27-6-15z" fill="#242a34"/>
+      <circle r="11" fill="#a2aab5"/><circle r="4" fill="#20242c"/>
+    </g>
+    <path d="M388 199l11-29 71 1 12 28z" fill="#ffda00" stroke="#22242a" stroke-width="3"/>
+    <text x="436" y="192" text-anchor="middle" fill="#101216" font-family="Arial,sans-serif" font-weight="900" font-size="21" letter-spacing="3">TAXI</text>
+    <text x="492" y="412" text-anchor="middle" fill="#151619" font-family="Arial,sans-serif" font-size="30" font-weight="900" font-style="italic" letter-spacing="-1">KOBLÍŽEK</text>
+    <text x="494" y="431" text-anchor="middle" fill="#302b14" font-family="Arial,sans-serif" font-size="9" font-weight="bold" letter-spacing="3">JÍZDA S ÚSMĚVEM</text>
+    <path d="M193 450l-43-4M311 449l273-7" stroke="#ffe98c" stroke-width="3"/>
+  </g>
+</svg>

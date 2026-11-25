@@ -59,9 +59,11 @@ test('built subpages exist as independent HTML with valid local assets', () => {
   }
 })
 
-test('homepage includes the supplied video and photo poster in both supported builds', () => {
+test('homepage includes the video and a separate photo gallery in both supported builds', () => {
   const html = readFileSync(new URL('../dist/index.html', import.meta.url), 'utf8')
-  assert.ok(html.includes(`poster="${basePrefix}/taxi-koblizek-auta.webp"`))
+  assert.ok(!html.includes(`poster="${basePrefix}/taxi-koblizek-auta.webp"`))
+  assert.ok(html.includes(`src="${basePrefix}/taxi-koblizek-auta.webp"`))
+  assert.ok(html.includes('class="photo-gallery"'))
   assert.ok(html.includes(`src="${basePrefix}/taxi-koblizek-video.mp4"`))
   assert.ok(html.includes(`href="${basePrefix}/taxi-koblizek-video.mp4"`))
   assert.ok(html.includes('aria-label="Video Taxi Koblížek"'))

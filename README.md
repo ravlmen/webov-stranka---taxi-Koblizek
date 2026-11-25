@@ -33,8 +33,11 @@ sestaví a nasadí na GitHub Pages. Pro tento repozitář bude adresa
 - Karty, tlačítka a nabídky mají zaoblený styl inspirovaný aplikací;
   kód ani zdroje objednávkové aplikace se nepoužívají.
 - Logo Taxi Koblížek je součástí hlavičky; jeho výřez má průhledné pozadí a je uložen v `public/logo-taxi-koblizek.png`.
-- V úvodní části je video `public/taxi-koblizek-video.mp4`; před přehráním se
-  zobrazuje fotografie vozidel `public/taxi-koblizek-auta.webp`.
+- V úvodní části je video `public/taxi-koblizek-video.mp4`. Fotogalerie níže na
+  stránce zatím obsahuje jednu fotografii `public/taxi-koblizek-auta.webp`.
+  Další fotografie se přidávají jako prvky `.gallery-slide` v `index.html`;
+  při více fotografiích se zapne přepínání s možností pozastavení. Nastavení
+  omezeného pohybu vypne automatické přepínání.
 - Samostatný náhled vlastního videa v sekci Příběh přes místní soubor MP4, WebM nebo MOV. Soubor se nikam
   neodesílá, není trvale uložen a po obnovení stránky zmizí. Podpora kodeků závisí
   na prohlížeči; doporučený formát je MP4/H.264.

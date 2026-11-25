@@ -1,3 +1,5 @@
+import { initGallery } from './gallery.js'
+
 const menuButton = document.querySelector('.menu-toggle')
 const navigation = document.querySelector('#navigation')
 const dropdowns = [...document.querySelectorAll('.dropdown-toggle')]
@@ -56,6 +58,10 @@ document.addEventListener('keydown', (event) => {
 })
 
 document.querySelector('#year').textContent = String(new Date().getFullYear())
+
+for (const gallery of document.querySelectorAll('.photo-gallery')) {
+  initGallery(gallery)
+}
 
 const fileInput = document.querySelector('#video-file')
 const video = document.querySelector('#intro-video')

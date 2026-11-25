@@ -45,6 +45,16 @@ test('all page links resolve and each document has an active navigation link', (
   }
 })
 
+test('header shows both regional phone numbers on every page', () => {
+  for (const path of ['/', ...Object.keys(pages)]) {
+    const html = renderPage(template, path, base)
+    const header = html.match(/<header class="site-header">[\s\S]*?<\/header>/)?.[0]
+    assert.ok(header, path)
+    assert.match(header, /href="tel:\+420777182346"[^>]*><span>Třebechovice pod Orebem<\/span><strong>777 182 346/)
+    assert.match(header, /href="tel:\+420601182346"[^>]*><span>Pohoří u Dobrušky<\/span><strong>601 182 346/)
+  }
+})
+
 test('built subpages exist as independent HTML with valid local assets', () => {
   for (const path of ['/', ...Object.keys(pages)]) {
     const file = new URL(`../dist${path}index.html`, import.meta.url)
@@ -61,9 +71,11 @@ test('built subpages exist as independent HTML with valid local assets', () => {
 
 test('homepage includes the video and a separate photo gallery in both supported builds', () => {
   const html = readFileSync(new URL('../dist/index.html', import.meta.url), 'utf8')
+  assert.ok(html.includes('<h1>VAŠE MĚSTO<br />VAŠE TAXI<br /><em>VÁŠ KOBLÍŽEK</em><br /><span class="hero-team">A JEHO TÝM</span></h1>'))
   assert.ok(!html.includes(`poster="${basePrefix}/taxi-koblizek-auta.webp"`))
   assert.ok(html.includes(`src="${basePrefix}/taxi-koblizek-auta.webp"`))
   assert.ok(html.includes('class="photo-gallery"'))
+  assert.ok(html.includes('s Koblížkem<br />a jeho týmem'))
   assert.ok(html.includes(`src="${basePrefix}/taxi-koblizek-video.mp4"`))
   assert.ok(html.includes(`href="${basePrefix}/taxi-koblizek-video.mp4"`))
   assert.ok(html.includes('aria-label="Video Taxi Koblížek"'))

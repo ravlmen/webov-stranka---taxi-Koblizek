@@ -23,7 +23,7 @@ sestaví a nasadí na GitHub Pages. Pro tento repozitář bude adresa
 ## Stav návrhu
 
 - Aktuální vizuální směr: taxi žlutá, černá a bílá, výrazná kondenzovaná
-  typografie, šachovnicové detaily a originální ilustrace moderního taxi.
+  typografie, šachovnicové detaily a fotografie vozidel Taxi Koblížek.
 - Responzivní úvod, služby, oblasti působení, ceník a telefonické kontakty.
 - Rozbalovací nabídky Služby a Ceník vedou na osm samostatných podstránek.
   Vite při sestavení vytváří každou jako vlastní HTML soubor v adresáři s
@@ -33,8 +33,9 @@ sestaví a nasadí na GitHub Pages. Pro tento repozitář bude adresa
 - Karty, tlačítka a nabídky mají zaoblený styl inspirovaný aplikací;
   kód ani zdroje objednávkové aplikace se nepoužívají.
 - Logo Taxi Koblížek je součástí hlavičky; jeho výřez má průhledné pozadí a je uložen v `public/logo-taxi-koblizek.png`.
-- Originální ilustrační grafika; nejde o fotografii skutečného vozidla.
-- Náhled vlastního videa přes místní soubor MP4, WebM nebo MOV. Soubor se nikam
+- V úvodní části je video `public/taxi-koblizek-video.mp4`; před přehráním se
+  zobrazuje fotografie vozidel `public/taxi-koblizek-auta.webp`.
+- Samostatný náhled vlastního videa v sekci Příběh přes místní soubor MP4, WebM nebo MOV. Soubor se nikam
   neodesílá, není trvale uložen a po obnovení stránky zmizí. Podpora kodeků závisí
   na prohlížeči; doporučený formát je MP4/H.264.
 - Žádná skutečná administrace, přihlášení ani serverové nahrávání zatím neexistují.
@@ -47,6 +48,6 @@ sestaví a nasadí na GitHub Pages. Pro tento repozitář bude adresa
 
 ## Další fáze
 
-Schválit vizuální směr, dodat skutečné fotografie a představovací video,
+Schválit vizuální směr a případně dodat další fotografie,
 ověřit texty a ceníky a navrhnout zabezpečenou správu obsahu s trvalým
 úložištěm médií. Přepnutí domény a nasazení proběhne až po schválení.

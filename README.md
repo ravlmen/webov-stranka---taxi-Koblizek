@@ -44,8 +44,8 @@ sestaví a nasadí na GitHub Pages. Pro tento repozitář bude adresa
 - Žádná skutečná administrace, přihlášení ani serverové nahrávání zatím neexistují.
 - Texty jsou návrhové a před zveřejněním je musí provozovatel schválit.
 - Telefonní čísla a oblasti vycházejí ze současného veřejného webu.
-- Ceny, recenze ani provozní doba nejsou smyšlené; chybějící údaje se nedoplňují
-  bez potvrzení provozovatelem.
+- Ceníky obsahují sazby a podmínky dodané provozovatelem. Recenze a provozní
+  doba se bez potvrzení provozovatelem nedoplňují.
 - Google Fonts načítá písma Barlow Condensed a DM Sans; před ostrým provozem je vhodné
   přejít na místní fonty a schválit právní a kontaktní údaje.
 

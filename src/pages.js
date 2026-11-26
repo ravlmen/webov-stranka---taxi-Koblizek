@@ -59,6 +59,15 @@ export const pages = {
   },
 }
 
+const pricingCards = [
+  ['Jízdné', '32 Kč za 1 km jízdy.'],
+  ['Nástup', '80 Kč.'],
+  ['Čekání', '480 Kč za hodinu.'],
+  ['Půjčení podsedáku', 'Zdarma.'],
+  ['Přistavení vozidla', 'V Třebechovicích pod Orebem a Pohoří zdarma. Mimo tyto obce dle dohody.'],
+  ['Delší cesty', 'Cesty k lékaři, na letiště a další delší trasy dle dohody.'],
+]
+
 for (const [slug, area, phone] of [
   ['trebechovice', 'Třebechovice pod Orebem', '777182346'],
   ['tyniste', 'Týniště nad Orlicí', '777182346'],
@@ -67,13 +76,9 @@ for (const [slug, area, phone] of [
   pages[`/cenik/${slug}/`] = {
     title: area,
     category: 'Ceník',
-    intro: `Cena jízdy pro oblast ${area}. Konkrétní trasu si nechte nacenit v aplikaci nebo při telefonické domluvě.`,
-    cards: [
-      ['Cena podle vaší trasy', 'V aplikaci zadejte odkud a kam pojedete. Před odesláním objednávky zkontrolujte zobrazenou cenu.'],
-      ['Raději po telefonu?', `<a class="detail-phone" href="tel:+420${phone}">${phone.match(/.{3}/g).join(' ')} ↗</a>`],
-      ['Podrobný ceník připravujeme', 'Ověřené sazby za kilometr, nástup a čekání doplníme po schválení provozovatelem. Tato návrhová stránka není závazným ceníkem.'],
-    ],
-    action: `<a class="button button-dark" href="${appUrl}">Zjistit cenu v aplikaci ↗</a>`,
+    intro: `Ceník pro oblast ${area}. Konkrétní jízdu s námi můžete domluvit telefonicky.`,
+    cards: pricingCards,
+    action: `<a class="button button-dark" href="tel:+420${phone}">Zavolat ${phone.match(/.{3}/g).join(' ')} ↗</a>`,
   }
 }
 

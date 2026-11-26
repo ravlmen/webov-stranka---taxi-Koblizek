@@ -55,6 +55,27 @@ test('header shows both regional phone numbers on every page', () => {
   }
 })
 
+test('all regional price lists show the provided rates and conditions', () => {
+  for (const [slug, phone] of [
+    ['trebechovice', '777182346'],
+    ['tyniste', '777182346'],
+    ['opocno-dobruska', '601182346'],
+  ]) {
+    const path = `/cenik/${slug}/`
+    const html = readFileSync(new URL(`../dist${path}index.html`, import.meta.url), 'utf8')
+    for (const text of [
+      '32 Kč za 1 km jízdy.',
+      '80 Kč.',
+      '480 Kč za hodinu.',
+      'Půjčení podsedáku',
+      'V Třebechovicích pod Orebem a Pohoří zdarma. Mimo tyto obce dle dohody.',
+      'Cesty k lékaři, na letiště a další delší trasy dle dohody.',
+      `href="tel:+420${phone}"`,
+    ]) assert.ok(html.includes(text), `${path}: ${text}`)
+    assert.ok(!html.includes('Podrobný ceník připravujeme'), path)
+  }
+})
+
 test('built subpages exist as independent HTML with valid local assets', () => {
   for (const path of ['/', ...Object.keys(pages)]) {
     const file = new URL(`../dist${path}index.html`, import.meta.url)

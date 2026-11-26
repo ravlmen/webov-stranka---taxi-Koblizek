@@ -83,7 +83,15 @@ test('homepage shows all three payment methods with illustrations', () => {
   for (const method of ['Platební kartou', 'Platební bránou', 'Hotově']) {
     assert.ok(section.includes(`<h3>${method}</h3>`), method)
   }
-  assert.equal((section.match(/<svg /g) ?? []).length, 3)
+  for (const [asset, alt] of [
+    ['payment-mastercard.svg', 'Mastercard'],
+    ['payment-visa.svg', 'Visa'],
+    ['payment-global-payments.svg', 'Secured by Global Payments'],
+  ]) {
+    assert.ok(section.includes(`src="${basePrefix}/${asset}" alt="${alt}"`), asset)
+    assert.ok(existsSync(new URL(`../dist/${asset}`, import.meta.url)), asset)
+  }
+  assert.ok(section.includes('class="cash-illustration"'))
 })
 
 test('built subpages exist as independent HTML with valid local assets', () => {

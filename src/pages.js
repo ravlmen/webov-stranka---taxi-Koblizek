@@ -35,6 +35,26 @@ export const pages = {
     ],
     action: `<a class="button button-dark" href="${appUrl}">Otevřít objednávkovou aplikaci ↗</a>`,
   },
+  '/cenik/napoje-a-cigarety/': {
+    title: 'Ceník nápojů a cigaret',
+    category: 'Dovoz',
+    intro: 'Ceník platný od 1. 4. 2025. K ceně nápojů nebo cigaret se připočítává cena za dopravu dle aktuálního ceníku taxi služby. Alkohol a tabákové výrobky jsou určeny pouze osobám starším 18 let.',
+    priceList: true,
+    cards: [
+      ['0,5 l Pivo 10 plech dle nabídky', '24 Kč'],
+      ['0,5 l Pivo 12 plech dle nabídky', '29 Kč'],
+      ['0,33 l Frisko dle nabídky', '28 Kč'],
+      ['1 l Sklepmistr dle nabídky', '83 Kč'],
+      ['0,75 l Rulandské modré Rosé Habánské sklepy', '129 Kč'],
+      ['0,75 l Zweireltrebe rosé Habánské sklepy', '129 Kč'],
+      ['0,75 l Veltlínské zelené Habánské sklepy', '129 Kč'],
+      ['0,5 l Rum Božkov', '188 Kč'],
+      ['0,5 l Vodka Božkov', '188 Kč'],
+      ['1,5 l Coca cola', '42 Kč'],
+      ['150 g Brambůrky dle nabídky', '28 Kč'],
+    ],
+    action: '<a class="button button-dark" href="/kontakt/">Kontaktovat nás ↗</a>',
+  },
   '/o-nas/': {
     title: 'Místní taxi. Osobní přístup.',
     category: 'O nás',
@@ -84,10 +104,11 @@ for (const [slug, area, phone] of [
 
 export function renderPage(html, pathname, base = '/') {
   const path = pathname.endsWith('/') ? pathname : `${pathname}/`
+  const prefix = base === '/' ? '' : (base.endsWith('/') ? base.slice(0, -1) : base)
   const page = pages[path]
   let result = html.replaceAll(' aria-current="page"', '')
   if (page) {
-    const content = `<main id="main-content"><section class="page-hero"><div class="section-shell"><div class="breadcrumbs"><a href="/">Úvod</a><span>/</span><span>${page.category}</span></div><p class="eyebrow">${page.category}</p><h1>${page.title}</h1><p class="page-intro">${page.intro}</p></div></section><section class="section-shell page-body"><div class="service-grid">${page.cards.map(([title, text], index) => `<article class="service-card"><span class="service-number">0${index + 1} / TAXI KOBLÍŽEK</span><h2>${title}</h2><p>${text}</p></article>`).join('')}</div><div class="page-actions">${page.action}<a class="text-link" href="/">Zpět na úvod ↗</a></div></section></main>`
+    const content = `<main id="main-content"><section class="page-hero"><div class="section-shell"><div class="breadcrumbs"><a href="/">Úvod</a><span>/</span><span>${page.category}</span></div><p class="eyebrow">${page.category}</p><h1>${page.title}</h1><p class="page-intro">${page.intro}</p></div></section><section class="section-shell page-body"><div class="service-grid${page.priceList ? ' product-grid' : ''}">${page.cards.map(([title, text], index) => `<article class="service-card"><span class="service-number">${String(index + 1).padStart(2, '0')} / TAXI KOBLÍŽEK</span><h2>${title}</h2><p>${text}</p></article>`).join('')}</div><div class="page-actions">${page.action}<a class="text-link" href="/">Zpět na úvod ↗</a></div></section></main>`
     result = result.replace(/<main>[\s\S]*?<\/main>/, content)
       .replace(/<title>.*?<\/title>/, `<title>${page.title} — Taxi Koblížek</title>`)
       .replace(/(<meta name="description" content=")[^"]*"/, `$1${page.intro}"`)
@@ -99,10 +120,9 @@ export function renderPage(html, pathname, base = '/') {
     .replace('href="/kontakt/">Domluvit odvoz', 'href="/sluzby/odvoz-z-akci/">Domluvit odvoz')
     .replace(`href="${appUrl}">Otevřít aplikaci`, 'href="/sluzby/objednavka-online/">Jak objednat online')
   result = result.replace(/(<a href="([^"]+)")/g, (match, opening, href) => {
-    return href === path ? `${opening} aria-current="page"` : match
+    return href === path || href === `${prefix}${path}` ? `${opening} aria-current="page"` : match
   })
-  if (base !== '/') {
-    const prefix = base.endsWith('/') ? base.slice(0, -1) : base
+  if (prefix) {
     result = result.replace(/(<a\b[^>]*\bhref=")(\/[^"]*)"/g, (match, opening, href) => {
       return href === prefix || href.startsWith(`${prefix}/`) ? match : `${opening}${prefix}${href}"`
     })

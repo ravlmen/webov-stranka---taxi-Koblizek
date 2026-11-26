@@ -7,8 +7,8 @@ const template = readFileSync(new URL('../index.html', import.meta.url), 'utf8')
 const base = process.env.GITHUB_PAGES === 'true' ? '/webov-stranka---taxi-Koblizek/' : '/'
 const basePrefix = base === '/' ? '' : base.slice(0, -1)
 
-test('all eight subpages render unique titles, descriptions and main headings', () => {
-  assert.equal(Object.keys(pages).length, 8)
+test('all nine subpages render unique titles, descriptions and main headings', () => {
+  assert.equal(Object.keys(pages).length, 9)
   for (const [path, page] of Object.entries(pages)) {
     const html = renderPage(template, path)
     assert.ok(html.includes(`<title>${page.title} — Taxi Koblížek</title>`), path)
@@ -55,13 +55,15 @@ test('header shows both regional phone numbers on every page', () => {
   }
 })
 
-test('delivery service links to the original price list from the homepage and main navigation', () => {
-  const url = 'https://taxikoblizek.webnode.cz/cenik-napoju-a-cigaret/'
+test('delivery service links to the local price list from the homepage and main navigation', () => {
+  const url = `${basePrefix}/cenik/napoje-a-cigarety/`
   for (const path of ['/', ...Object.keys(pages)]) {
     const html = readFileSync(new URL(`../dist${path}index.html`, import.meta.url), 'utf8')
     const navigation = html.match(/<nav id="navigation"[\s\S]*?<\/nav>/)?.[0]
     assert.ok(navigation, path)
-    assert.match(navigation, /aria-controls="services-menu"[\s\S]*?<\/div>\s*<\/div>\s*<a href="https:\/\/taxikoblizek\.webnode\.cz\/cenik-napoju-a-cigaret\/">Dovoz alkoholu a cigaret<\/a>\s*<div class="nav-dropdown">\s*<button[^>]*aria-controls="prices-menu"/)
+    assert.ok(navigation.includes(`href="${url}"${path === '/cenik/napoje-a-cigarety/' ? ' aria-current="page"' : ''}>Dovoz alkoholu a cigaret`), path)
+    assert.ok(navigation.indexOf('aria-controls="services-menu"') < navigation.indexOf(`href="${url}"`), path)
+    assert.ok(navigation.indexOf(`href="${url}"`) < navigation.indexOf('aria-controls="prices-menu"'), path)
     if (path === '/') {
       const services = html.match(/<section class="services section-shell section-space"[\s\S]*?<\/section>/)?.[0]
       assert.ok(services)
@@ -70,6 +72,30 @@ test('delivery service links to the original price list from the homepage and ma
       assert.ok(services.includes('pouze osobám starším 18 let'))
     }
   }
+})
+
+test('delivery price list contains the complete sourced assortment and prices', () => {
+  const html = readFileSync(new URL('../dist/cenik/napoje-a-cigarety/index.html', import.meta.url), 'utf8')
+  const products = [
+    ['0,5 l Pivo 10 plech dle nabídky', '24 Kč'],
+    ['0,5 l Pivo 12 plech dle nabídky', '29 Kč'],
+    ['0,33 l Frisko dle nabídky', '28 Kč'],
+    ['1 l Sklepmistr dle nabídky', '83 Kč'],
+    ['0,75 l Rulandské modré Rosé Habánské sklepy', '129 Kč'],
+    ['0,75 l Zweireltrebe rosé Habánské sklepy', '129 Kč'],
+    ['0,75 l Veltlínské zelené Habánské sklepy', '129 Kč'],
+    ['0,5 l Rum Božkov', '188 Kč'],
+    ['0,5 l Vodka Božkov', '188 Kč'],
+    ['1,5 l Coca cola', '42 Kč'],
+    ['150 g Brambůrky dle nabídky', '28 Kč'],
+  ]
+  assert.equal((html.match(/<article class="service-card">/g) ?? []).length, products.length)
+  for (const [product, price] of products) {
+    assert.ok(html.includes(`<h2>${product}</h2><p>${price}</p>`), product)
+  }
+  assert.ok(html.includes('Ceník platný od 1. 4. 2025'))
+  assert.ok(html.includes('připočítává cena za dopravu'))
+  assert.ok(html.includes('pouze osobám starším 18 let'))
 })
 
 test('all regional price lists show the provided rates and conditions', () => {
@@ -116,6 +142,7 @@ test('built subpages exist as independent HTML with valid local assets', () => {
     const file = new URL(`../dist${path}index.html`, import.meta.url)
     assert.ok(existsSync(file), path)
     const html = readFileSync(file, 'utf8')
+    if (path !== '/') assert.ok(html.includes(`href="${basePrefix}${path}" aria-current="page"`), path)
     for (const [, asset] of html.matchAll(/(?:src|href)="([^"]*\/assets\/[^"]+)"/g)) {
       const distAsset = basePrefix && asset.startsWith(basePrefix) ? asset.slice(basePrefix.length) : asset
       assert.ok(existsSync(new URL(`../dist${distAsset}`, import.meta.url)), asset)

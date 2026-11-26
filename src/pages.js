@@ -64,7 +64,7 @@ const pricingCards = [
   ['Nástup', '80 Kč.'],
   ['Čekání', '480 Kč za hodinu.'],
   ['Půjčení podsedáku', 'Zdarma.'],
-  ['Přistavení vozidla', 'V Třebechovicích pod Orebem a Pohoří zdarma. Mimo tyto obce dle dohody.'],
+  ['Přistavení vozidla', 'V Třebechovicích pod Orebem a Pohoří zdarma. V Týništi nad Orlicí 150 Kč. Mimo tyto obce dle dohody.'],
   ['Delší cesty', 'Cesty k lékaři, na letiště a další delší trasy dle dohody.'],
 ]
 

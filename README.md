@@ -25,7 +25,7 @@ sestaví a nasadí na GitHub Pages. Pro tento repozitář bude adresa
 - Aktuální vizuální směr: taxi žlutá, černá a bílá, výrazná kondenzovaná
   typografie, šachovnicové detaily a fotografie vozidel Taxi Koblížek.
 - Responzivní úvod, služby, oblasti působení, ceník a telefonické kontakty.
-- Dovoz nápojů a cigaret je uveden mezi službami; ceník je propojen s
+- Dovoz alkoholu a cigaret je uveden v hlavní nabídce a mezi službami; ceník je propojen s
   původní stránkou na Webnode, aby se ceny neduplikovaly.
 - Úvodní stránka uvádí platbu kartami Mastercard a Visa, platební bránou
   Global Payments a hotově. Loga karet pocházejí ze sady
@@ -50,7 +50,8 @@ sestaví a nasadí na GitHub Pages. Pro tento repozitář bude adresa
 - Žádná skutečná administrace, přihlášení ani serverové nahrávání zatím neexistují.
 - Texty jsou návrhové a před zveřejněním je musí provozovatel schválit.
 - Telefonní čísla a oblasti vycházejí ze současného veřejného webu.
-- Ceníky obsahují sazby a podmínky dodané provozovatelem. Recenze a provozní
+- Ceníky obsahují sazby a podmínky dodané provozovatelem, včetně přistavení
+  vozidla v Týništi nad Orlicí za 150 Kč. Recenze a provozní
   doba se bez potvrzení provozovatelem nedoplňují.
 - Google Fonts načítá písma Barlow Condensed a DM Sans; před ostrým provozem je vhodné
   přejít na místní fonty a schválit právní a kontaktní údaje.

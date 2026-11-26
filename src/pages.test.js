@@ -55,13 +55,13 @@ test('header shows both regional phone numbers on every page', () => {
   }
 })
 
-test('delivery service links to the original price list from the homepage and every menu', () => {
+test('delivery service links to the original price list from the homepage and main navigation', () => {
   const url = 'https://taxikoblizek.webnode.cz/cenik-napoju-a-cigaret/'
   for (const path of ['/', ...Object.keys(pages)]) {
     const html = readFileSync(new URL(`../dist${path}index.html`, import.meta.url), 'utf8')
-    const menu = html.match(/<div class="dropdown-panel" id="services-menu"[\s\S]*?<\/div>/)?.[0]
-    assert.ok(menu, path)
-    assert.ok(menu.includes(`href="${url}">Dovoz nápojů a cigaret`), path)
+    const navigation = html.match(/<nav id="navigation"[\s\S]*?<\/nav>/)?.[0]
+    assert.ok(navigation, path)
+    assert.match(navigation, /aria-controls="services-menu"[\s\S]*?<\/div>\s*<\/div>\s*<a href="https:\/\/taxikoblizek\.webnode\.cz\/cenik-napoju-a-cigaret\/">Dovoz alkoholu a cigaret<\/a>\s*<div class="nav-dropdown">\s*<button[^>]*aria-controls="prices-menu"/)
     if (path === '/') {
       const services = html.match(/<section class="services section-shell section-space"[\s\S]*?<\/section>/)?.[0]
       assert.ok(services)
@@ -85,7 +85,7 @@ test('all regional price lists show the provided rates and conditions', () => {
       '80 Kč.',
       '480 Kč za hodinu.',
       'Půjčení podsedáku',
-      'V Třebechovicích pod Orebem a Pohoří zdarma. Mimo tyto obce dle dohody.',
+      '<h2>Přistavení vozidla</h2><p>V Třebechovicích pod Orebem a Pohoří zdarma. V Týništi nad Orlicí 150 Kč. Mimo tyto obce dle dohody.</p>',
       'Cesty k lékaři, na letiště a další delší trasy dle dohody.',
       `href="tel:+420${phone}"`,
     ]) assert.ok(html.includes(text), `${path}: ${text}`)

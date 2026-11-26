@@ -25,6 +25,8 @@ sestaví a nasadí na GitHub Pages. Pro tento repozitář bude adresa
 - Aktuální vizuální směr: taxi žlutá, černá a bílá, výrazná kondenzovaná
   typografie, šachovnicové detaily a fotografie vozidel Taxi Koblížek.
 - Responzivní úvod, služby, oblasti působení, ceník a telefonické kontakty.
+- Dovoz nápojů a cigaret je uveden mezi službami; ceník je propojen s
+  původní stránkou na Webnode, aby se ceny neduplikovaly.
 - Úvodní stránka uvádí platbu kartami Mastercard a Visa, platební bránou
   Global Payments a hotově. Loga karet pocházejí ze sady
   [Payrexx payment-logos](https://github.com/payrexx/payment-logos) (CC0);

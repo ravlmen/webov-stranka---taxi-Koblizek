@@ -55,6 +55,23 @@ test('header shows both regional phone numbers on every page', () => {
   }
 })
 
+test('delivery service links to the original price list from the homepage and every menu', () => {
+  const url = 'https://taxikoblizek.webnode.cz/cenik-napoju-a-cigaret/'
+  for (const path of ['/', ...Object.keys(pages)]) {
+    const html = readFileSync(new URL(`../dist${path}index.html`, import.meta.url), 'utf8')
+    const menu = html.match(/<div class="dropdown-panel" id="services-menu"[\s\S]*?<\/div>/)?.[0]
+    assert.ok(menu, path)
+    assert.ok(menu.includes(`href="${url}">Dovoz nápojů a cigaret`), path)
+    if (path === '/') {
+      const services = html.match(/<section class="services section-shell section-space"[\s\S]*?<\/section>/)?.[0]
+      assert.ok(services)
+      assert.ok(services.includes('<h3>Dovoz nápojů a cigaret</h3>'))
+      assert.ok(services.includes(`href="${url}">Ceník nápojů a cigaret`))
+      assert.ok(services.includes('pouze osobám starším 18 let'))
+    }
+  }
+})
+
 test('all regional price lists show the provided rates and conditions', () => {
   for (const [slug, phone] of [
     ['trebechovice', '777182346'],

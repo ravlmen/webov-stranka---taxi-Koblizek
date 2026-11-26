@@ -25,6 +25,7 @@ sestaví a nasadí na GitHub Pages. Pro tento repozitář bude adresa
 - Aktuální vizuální směr: taxi žlutá, černá a bílá, výrazná kondenzovaná
   typografie, šachovnicové detaily a fotografie vozidel Taxi Koblížek.
 - Responzivní úvod, služby, oblasti působení, ceník a telefonické kontakty.
+- Úvodní stránka uvádí platbu kartou, platební bránou a hotově.
 - Rozbalovací nabídky Služby a Ceník vedou na osm samostatných podstránek.
   Vite při sestavení vytváří každou jako vlastní HTML soubor v adresáři s
   `index.html`; přímé otevření i obnovení podstránky funguje na statickém hostingu.

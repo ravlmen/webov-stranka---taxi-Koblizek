@@ -76,6 +76,16 @@ test('all regional price lists show the provided rates and conditions', () => {
   }
 })
 
+test('homepage shows all three payment methods with illustrations', () => {
+  const html = readFileSync(new URL('../dist/index.html', import.meta.url), 'utf8')
+  const section = html.match(/<section class="payments section-shell"[\s\S]*?<\/section>/)?.[0]
+  assert.ok(section)
+  for (const method of ['Platební kartou', 'Platební bránou', 'Hotově']) {
+    assert.ok(section.includes(`<h3>${method}</h3>`), method)
+  }
+  assert.equal((section.match(/<svg /g) ?? []).length, 3)
+})
+
 test('built subpages exist as independent HTML with valid local assets', () => {
   for (const path of ['/', ...Object.keys(pages)]) {
     const file = new URL(`../dist${path}index.html`, import.meta.url)
